@@ -1,5 +1,4 @@
-
-# The Cloud Library
+# Contents
 
 * [Home](index.md)
 * [Usage](Usage.md)
