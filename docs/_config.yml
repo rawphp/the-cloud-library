@@ -8,4 +8,4 @@ include:
   - Usage.md
   - License.md
 
-theme: jekyll-theme-tactile
+theme: jekyll-theme-hacker
