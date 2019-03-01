@@ -31,7 +31,7 @@
     "circular-json": "0.5.x",
     "debug": "4.x.x",
     "fs-extra": "6.x.x",
-    "moment": "2.x.x",
+    "moment": ">=2.19.3",
     "uuid": "3.x.x"
   },
   "devDependencies": {
