@@ -1,0 +1,11 @@
+src
+test
+scripts
+.editorconfig
+.gitignore
+.gitlab-ci.yml
+.markdownlint.json
+tsconfig.json
+tslint.json
+webpack.config.js
+yarn.lock

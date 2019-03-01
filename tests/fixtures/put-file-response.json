@@ -1,0 +1,7 @@
+{
+  "ETag": "\"8736cdfe08480bca66cffeee06268705\"",
+  "Location": "https://tdk-backup.s3.ap-southeast-2.amazonaws.com/test/integration/file.json",
+  "key": "test/integration/file.json",
+  "Key": "test/integration/file.json",
+  "Bucket": "tdk-backup"
+}

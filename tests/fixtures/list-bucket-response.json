@@ -1,0 +1,48 @@
+{
+  "IsTruncated": false,
+  "Marker": "",
+  "Contents": [{
+    "Key": ".gitconfig",
+    "LastModified": "2019-01-11T10:52:23.000Z",
+    "ETag": "\"233a6b314e6dd8cefd47626a33a5d6ee\"",
+    "Size": 177,
+    "StorageClass": "STANDARD",
+    "Owner": {
+      "DisplayName": "awsdev-tomk",
+      "ID": "47f6eb496cc6158a5d32159933bc35c7ec9f204a9c61725fa24d8f3acc891388"
+    }
+  }, {
+    "Key": ".npmrc",
+    "LastModified": "2019-01-11T10:52:23.000Z",
+    "ETag": "\"1fdca8897920ad61e68586dbdbac7559\"",
+    "Size": 71,
+    "StorageClass": "STANDARD",
+    "Owner": {
+      "DisplayName": "awsdev-tomk",
+      "ID": "47f6eb496cc6158a5d32159933bc35c7ec9f204a9c61725fa24d8f3acc891388"
+    }
+  }, {
+    "Key": ".yarnrc",
+    "LastModified": "2019-01-11T10:52:23.000Z",
+    "ETag": "\"54ed074d1a30274ae498f2110bfe7d14\"",
+    "Size": 121,
+    "StorageClass": "STANDARD",
+    "Owner": {
+      "DisplayName": "awsdev-tomk",
+      "ID": "47f6eb496cc6158a5d32159933bc35c7ec9f204a9c61725fa24d8f3acc891388"
+    }
+  }],
+  "Name": "tdk-backup",
+  "Prefix": "",
+  "Delimiter": "/",
+  "MaxKeys": 1000,
+  "CommonPrefixes": [{
+    "Prefix": ".aws/"
+  }, {
+    "Prefix": ".ssh/"
+  }, {
+    "Prefix": "Development/"
+  }, {
+    "Prefix": "Downloads/"
+  }]
+}

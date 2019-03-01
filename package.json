@@ -1,0 +1,70 @@
+{
+  "name": "@tdk/the-cloud-library",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "./scripts/build",
+    "watch": "npm-watch",
+    "lint": "tslint --project tsconfig.json",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "coverage": "jest --coverage",
+    "clean": "rm *.js",
+    "generate-docs": "jsdoc -c ./api.json -d generated-docs -t ../../node_modules/ink-docstrap/template -u docs/tutorials -R docs/README.md -r ./dist",
+    "setup": "yarn build && npm uninstall -g && npm install -g",
+    "release": "yarn build && npm publish",
+    "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:rawphp/the-cloud-library.git"
+  },
+  "engines": {
+    "node": ">=8.10"
+  },
+  "dependencies": {
+    "ajv": "6.x.x",
+    "aws-sdk": "2.x.x",
+    "bluebird": "3.x.x",
+    "circular-json": "0.5.x",
+    "debug": "4.x.x",
+    "fs-extra": "6.x.x",
+    "moment": "2.x.x",
+    "uuid": "3.x.x"
+  },
+  "devDependencies": {
+    "@types/bluebird": "3.x.x",
+    "@types/debug": "4.x.x",
+    "@types/fs-extra": "5.x.x",
+    "@types/jest": "23.x.x",
+    "@types/node": "8.x.x",
+    "babel-loader": "8.x.x",
+    "changelog-verify": "1.x.x",
+    "ink-docstrap": "1.x.x",
+    "jest": "23.x.x",
+    "jsdoc": "3.x.x",
+    "lodash.omit": "4.x.x",
+    "markdownlint-cli": "0.14.x",
+    "nodemon": "1.x.x",
+    "npm-watch": "0.6.x",
+    "ts-jest": "23.x.x",
+    "ts-loader": "5.x.x",
+    "ts-node": "8.x.x",
+    "tslint": "5.x.x",
+    "typescript": "3.x.x",
+    "uuid-validate": "0.0.x",
+    "version-changelog": "3.x.x"
+  },
+  "watch": {
+    "build": {
+      "patterns": [
+        "src",
+        "test"
+      ],
+      "extensions": "js,ts,json",
+      "legacyWatch": true
+    }
+  }
+}
