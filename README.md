@@ -5,7 +5,20 @@ The goal of this project is to support all the major cloud storage providers in 
 We'd like to provide the following common functionality:
 
     - List
-    - Push
+    - Put
     - Get
     - Delete
     - Search (later)
+
+## Plan
+
+    - S3
+    - Dropbox
+    - Amazon Drive
+    - Box
+    - FTP
+    - Google Drive
+
+## License
+
+MIT
