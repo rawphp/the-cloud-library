@@ -73,17 +73,47 @@ export class IntegrationManager extends EventEmitter implements IIntegrationMana
     return;
   }
 
+  /**
+   * Lists files in a directory.
+   *
+   * @param path directory path
+   *
+   * @returns list of files and directories
+   */
   public async list(path: string, options: any): Promise<any[]> {
     throw new Error('Method not implemented.');
   }
 
+  /**
+   * Uploads a file to the cloud.
+   *
+   * @param path file path
+   * @param data file content
+   *
+   * @returns true on success
+   */
   public async put(path: string, data: string, options: any): Promise<boolean> {
     throw new Error('Method not implemented.');
   }
+
+  /**
+   * Downloads a file from the cloud.
+   *
+   * @param path file path
+   *
+   * @returns file contents
+   */
   public async get(path: string, options: any): Promise<string> {
     throw new Error('Method not implemented.');
   }
 
+  /**
+   * Deletes a file in the cloud.
+   *
+   * @param path file path
+   *
+   * @returns true on success
+   */
   public async remove(path: string, options: any): Promise<boolean> {
     throw new Error('Method not implemented.');
   }

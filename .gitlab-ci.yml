@@ -12,7 +12,7 @@ stages:
 deps build:
   stage: build
   script:
-    - source ./scripts/prepare
+    - source yarn run build
   artifacts:
     paths:
       - node_modules/
@@ -27,6 +27,11 @@ unit test:
   stage: test
   script:
     - yarn run test
+
+markdown lint:
+  stage: test
+  script:
+    - yarn run markdownlint:lint
 
 coverage:
   stage: test

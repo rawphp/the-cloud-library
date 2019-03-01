@@ -5,9 +5,10 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "./scripts/build",
+    "build": "tsc",
     "watch": "npm-watch",
     "lint": "tslint --project tsconfig.json",
+    "markdownlint:lint": "markdownlint -c .markdownlint.json '*.md'",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "coverage": "jest --coverage",

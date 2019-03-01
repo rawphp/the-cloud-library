@@ -74,10 +74,11 @@ export abstract class Integration extends EventEmitter implements IIntegration {
    * Deletes a file in the cloud.
    *
    * @param path file path
+   * @param options remove options
    *
    * @returns true on success
    */
-  public abstract async remove(path, options: any): Promise<boolean>;
+  public abstract async remove(path: string, options: any): Promise<boolean>;
 
   // public abstract async search(query, options: any): Promise<string[]>;
 
