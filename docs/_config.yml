@@ -6,5 +6,6 @@ relative_links:
 include:
   - index.md
   - Usage.md
+  - License.md
 
 theme: jekyll-theme-tactile
