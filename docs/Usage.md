@@ -14,7 +14,7 @@ manager.list()
 
 ## Debug
 
-You can enable debug mode by exporting `DEBUG=cloud` by default.
+You can enable debug mode by declaring `DEBUG=cloud` environment variable.
 
 ```bash
 export DEBUG=cloud
