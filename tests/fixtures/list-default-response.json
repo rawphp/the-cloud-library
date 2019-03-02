@@ -1,0 +1,141 @@
+[{
+  "type": "d",
+  "name": ".",
+  "sticky": false,
+  "rights": {
+    "user": "rwx",
+    "group": "rx",
+    "other": "rx"
+  },
+  "acl": false,
+  "owner": "dlptest9",
+  "group": "dlptest9",
+  "size": 4096,
+  "date": "2019-02-08T06:50:00.000Z"
+}, {
+  "type": "d",
+  "name": "..",
+  "sticky": false,
+  "rights": {
+    "user": "rwx",
+    "group": "rx",
+    "other": "rx"
+  },
+  "acl": false,
+  "owner": "dlptest9",
+  "group": "dlptest9",
+  "size": 4096,
+  "date": "2019-02-08T06:50:00.000Z"
+}, {
+  "type": "-",
+  "name": ".ftpquota_190208_160851_190208_161432",
+  "sticky": false,
+  "rights": {
+    "user": "rw",
+    "group": "r",
+    "other": "r"
+  },
+  "acl": false,
+  "owner": "dlptest9",
+  "group": "dlptest9",
+  "size": 4,
+  "date": "2019-02-07T23:14:00.000Z"
+}, {
+  "type": "-",
+  "name": "28b3e136-d883-4102-b35a-9672582c76e3.txt",
+  "sticky": false,
+  "rights": {
+    "user": "rw",
+    "group": "r",
+    "other": "r"
+  },
+  "acl": false,
+  "owner": "dlptest9",
+  "group": "dlptest9",
+  "size": 136,
+  "date": "2019-02-08T06:42:00.000Z"
+}, {
+  "type": "-",
+  "name": "5b8b7c31-bc9d-41e4-8280-94f1f6c0c472.txt",
+  "sticky": false,
+  "rights": {
+    "user": "rw",
+    "group": "r",
+    "other": "r"
+  },
+  "acl": false,
+  "owner": "dlptest9",
+  "group": "dlptest9",
+  "size": 136,
+  "date": "2019-02-08T06:42:00.000Z"
+}, {
+  "type": "-",
+  "name": "5db4a46f-d00b-4fb7-8a62-27a790fff204.txt",
+  "sticky": false,
+  "rights": {
+    "user": "rw",
+    "group": "r",
+    "other": "r"
+  },
+  "acl": false,
+  "owner": "dlptest9",
+  "group": "dlptest9",
+  "size": 136,
+  "date": "2019-02-08T06:49:00.000Z"
+}, {
+  "type": "d",
+  "name": "7326b125-d696-435a-9940-00af20802241",
+  "sticky": false,
+  "rights": {
+    "user": "rwx",
+    "group": "rx",
+    "other": "rx"
+  },
+  "acl": false,
+  "owner": "dlptest9",
+  "group": "dlptest9",
+  "size": 4096,
+  "date": "2019-02-08T06:42:00.000Z"
+}, {
+  "type": "d",
+  "name": "a06491c2-8a4b-4a82-b025-6dc743d69116",
+  "sticky": false,
+  "rights": {
+    "user": "rwx",
+    "group": "rx",
+    "other": "rx"
+  },
+  "acl": false,
+  "owner": "dlptest9",
+  "group": "dlptest9",
+  "size": 4096,
+  "date": "2019-02-08T06:49:00.000Z"
+}, {
+  "type": "-",
+  "name": "d1f30493-6914-42d8-8313-2f1f79fd83ec.txt",
+  "sticky": false,
+  "rights": {
+    "user": "rw",
+    "group": "r",
+    "other": "r"
+  },
+  "acl": false,
+  "owner": "dlptest9",
+  "group": "dlptest9",
+  "size": 136,
+  "date": "2019-02-08T06:49:00.000Z"
+}, {
+  "type": "-",
+  "name": "d647f99a-3485-4451-9e31-183585a89781.txt",
+  "sticky": false,
+  "rights": {
+    "user": "rw",
+    "group": "r",
+    "other": "r"
+  },
+  "acl": false,
+  "owner": "dlptest9",
+  "group": "dlptest9",
+  "size": 136,
+  "date": "2019-02-08T06:42:00.000Z"
+}]

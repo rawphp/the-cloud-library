@@ -1,31 +1,49 @@
 import { EventEmitter } from 'events';
-import { IIntegration, IIntegrationManager, IObject, RegisterIntegrationFunc } from './types';
-
-export interface ILoadedIntegrations {
-  [integrationId: string]: IIntegration;
-}
-
-export interface IRegisteredIntegrations {
-  [integrationId: string]: RegisterIntegrationFunc;
-}
+import { FTPIntegration } from './integrations/ftp/FTPIntegration';
+import { S3Integration } from './integrations/s3/S3Integration';
+import {
+  IConfig,
+  IIntegration,
+  IIntegrationConfig,
+  IIntegrationManager,
+  ILoadedIntegrations,
+  IRegisteredIntegrations,
+  RegisterIntegrationFunc,
+} from './types';
 
 /**
  * Integration Manager.
  */
 export class IntegrationManager extends EventEmitter implements IIntegrationManager {
   /** integration config */
-  protected config: IObject;
+  protected config: IConfig;
   /** loaded integrations */
   protected loadedIntegrations: ILoadedIntegrations;
   /** registered integrations */
   protected registeredIntegrations: IRegisteredIntegrations;
 
-  public constructor(config: any) {
+  public constructor(config: IConfig) {
     super();
 
     this.config = config;
     this.loadedIntegrations = {};
     this.registeredIntegrations = {};
+
+    this.init();
+  }
+
+  /**
+   * Initialises the manager with integrations.
+   *
+   * @memberof IntegrationManager
+   */
+  public init() {
+    this.registerIntegration('s3', (mgr: IIntegrationManager) => {
+      return new S3Integration(mgr.getIntegrationConfig('s3') as any);
+    });
+    this.registerIntegration('ftp', (mgr: IIntegrationManager) => {
+      return new FTPIntegration(mgr.getIntegrationConfig('ftp') as any);
+    });
   }
 
   /**
@@ -35,7 +53,7 @@ export class IntegrationManager extends EventEmitter implements IIntegrationMana
    *
    * @returns this manager
    */
-  public addIntegration(integrationId: string, registerIntegrationFunc: RegisterIntegrationFunc): IIntegrationManager {
+  public registerIntegration(integrationId: string, registerIntegrationFunc: RegisterIntegrationFunc): IIntegrationManager {
     this.registeredIntegrations[integrationId] = registerIntegrationFunc;
 
     return this;
@@ -63,14 +81,17 @@ export class IntegrationManager extends EventEmitter implements IIntegrationMana
    * @returns the integration instance
    */
   public getIntegration(integrationId: string): IIntegration {
-    if (this.loadedIntegrations[integrationId]) {
-      return this.loadedIntegrations[integrationId];
-    } else if (this.registeredIntegrations[integrationId]) {
-      const boot = this.registeredIntegrations[integrationId];
-      return boot(this);
+    if (!this.loadedIntegrations[integrationId]) {
+      if (!this.registeredIntegrations[integrationId]) {
+        return;
+      }
+
+      const bootFunc = this.registeredIntegrations[integrationId];
+
+      this.loadedIntegrations[integrationId] = bootFunc(this);
     }
 
-    return;
+    return this.loadedIntegrations[integrationId];
   }
 
   /**
@@ -125,7 +146,7 @@ export class IntegrationManager extends EventEmitter implements IIntegrationMana
    *
    * @returns integration config object
    */
-  public getConfig(integrationId: string): IObject {
-    return this.config[integrationId];
+  public getIntegrationConfig(integrationId: string): IIntegrationConfig {
+    return this.config.connections[integrationId];
   }
 }

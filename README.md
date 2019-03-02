@@ -63,10 +63,10 @@ remove(path: string, options?: any): Promise<boolean>;
 ## Plan
 
     - [x] S3
-    - [ ] Dropbox
+    - [x] Dropbox
+    - [x] FTP
     - [ ] Amazon Drive
     - [ ] Box
-    - [ ] FTP
     - [ ] Google Drive
 
 ## License

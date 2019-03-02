@@ -1,12 +1,26 @@
 {
-  "integrations": {
-    "s3": {
+  "connections": {
+    "S3 Backup Up": {
+      "integrationId": "s3",
       "bucket": "my-bucket-name",
       "region": "ap-southeast-2",
       "credentials": {
         "aws_access_key_id": "key",
         "aws_secret_access_key": "secret"
       }
+    },
+    "FTP": {
+      "integrationId": "ftp",
+      "host": "",
+      "port": 21,
+      "username": "",
+      "password": ""
+    },
+    "Dropbox": {
+      "integrationId": "dropbox",
+      "accessToken": "",
+      "appKey": "",
+      "appSecret": ""
     }
   }
 }

@@ -1,0 +1,57 @@
+[{
+  "type": "d",
+  "name": ".",
+  "sticky": false,
+  "rights": {
+    "user": "rwx",
+    "group": "rx",
+    "other": "rx"
+  },
+  "acl": false,
+  "owner": "dlptest9",
+  "group": "dlptest9",
+  "size": 4096,
+  "date": "2019-02-08T07:04:00.000Z"
+}, {
+  "type": "d",
+  "name": "..",
+  "sticky": false,
+  "rights": {
+    "user": "rwx",
+    "group": "rx",
+    "other": "rx"
+  },
+  "acl": false,
+  "owner": "dlptest9",
+  "group": "dlptest9",
+  "size": 4096,
+  "date": "2019-02-08T07:04:00.000Z"
+}, {
+  "type": "-",
+  "name": "test1.txt",
+  "sticky": false,
+  "rights": {
+    "user": "rw",
+    "group": "r",
+    "other": "r"
+  },
+  "acl": false,
+  "owner": "dlptest9",
+  "group": "dlptest9",
+  "size": 0,
+  "date": "2019-02-08T07:04:00.000Z"
+}, {
+  "type": "d",
+  "name": "tester-2",
+  "sticky": false,
+  "rights": {
+    "user": "rwx",
+    "group": "rx",
+    "other": "rx"
+  },
+  "acl": false,
+  "owner": "dlptest9",
+  "group": "dlptest9",
+  "size": 4096,
+  "date": "2019-02-08T07:04:00.000Z"
+}]

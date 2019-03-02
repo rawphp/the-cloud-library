@@ -6,7 +6,50 @@ export interface IObject {
   [name: string]: any;
 }
 
-export interface IIntegrationBase extends EventEmitter {
+export interface ILoadedIntegrations {
+  [integrationId: string]: IIntegration;
+}
+
+export interface IRegisteredIntegrations {
+  [integrationId: string]: RegisterIntegrationFunc;
+}
+
+export interface IIntegrationConfig extends IObject {
+  /** connection integration id */
+  integrationId: string;
+}
+
+export interface IConfig {
+  /** a connections object */
+  connections: {
+    [name: string]: IIntegrationConfig;
+  };
+}
+
+export interface IIntegration extends EventEmitter {
+  /** integration id */
+  id: string;
+  /** integration name */
+  name: string;
+  /** connected flag */
+  connected: boolean;
+
+  /**
+   * Connects the integration to the cloud.
+   *
+   * @param options connection options
+   *
+   * @returns the integration instance
+   */
+  connect(options?: any): Promise<IIntegration>;
+  /**
+   * Disconnects the integration from the cloud.
+   *
+   * @param options disconnection options
+   *
+   * @returns the integration
+   */
+  disconnect(options?: any): Promise<IIntegration>;
   /**
    * Lists files in a directory.
    *
@@ -42,33 +85,7 @@ export interface IIntegrationBase extends EventEmitter {
   remove(path: string, options?: any): Promise<boolean>;
 }
 
-export interface IIntegration extends IIntegrationBase {
-  /** integration id */
-  id: string;
-  /** integration name */
-  name: string;
-  /** connected flag */
-  connected: boolean;
-
-  /**
-   * Connects the integration to the cloud.
-   *
-   * @param options connection options
-   *
-   * @returns the integration instance
-   */
-  connect(options?: any): Promise<IIntegration>;
-  /**
-   * Disconnects the integration from the cloud.
-   *
-   * @param options disconnection options
-   *
-   * @returns the integration
-   */
-  disconnect(options?: any): Promise<IIntegration>;
-}
-
-export interface IIntegrationManager extends IIntegrationBase {
+export interface IIntegrationManager extends EventEmitter {
   /**
    * Adds a boot function for an integration.
    *
@@ -76,7 +93,7 @@ export interface IIntegrationManager extends IIntegrationBase {
    *
    * @returns this manager
    */
-  addIntegration(integrationId: string, registerIntegrationFunc: RegisterIntegrationFunc): IIntegrationManager;
+  registerIntegration(integrationId: string, registerIntegrationFunc: RegisterIntegrationFunc): IIntegrationManager;
   /**
    * Removes an integration from the manager.
    *
@@ -100,5 +117,5 @@ export interface IIntegrationManager extends IIntegrationBase {
    *
    * @returns integration config object
    */
-  getConfig(integrationId: string): IObject;
+  getIntegrationConfig(integrationId: string): IIntegrationConfig;
 }

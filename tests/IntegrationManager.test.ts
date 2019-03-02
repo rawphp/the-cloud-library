@@ -1,5 +1,5 @@
 import { IntegrationManager } from '../src/IntegrationManager';
-import { IS3IntegrationParams, S3Integration } from '../src/integrations/S3Integration';
+import { IS3IntegrationParams, S3Integration } from '../src/integrations/s3/S3Integration';
 import { IIntegrationManager } from '../src/types';
 
 describe('IntegrationManager', () => {
@@ -7,12 +7,15 @@ describe('IntegrationManager', () => {
 
   beforeEach(() => {
     manager = new IntegrationManager({
-      s3: {
-        bucket: 'test-bucket-name',
-        region: 'ap-southeast-2',
-        credentials: {
-          aws_access_key_id: process.env.AWS_ACCESS_KEY_ID,
-          aws_secret_access_key: process.env.AWS_SECRET_ACCESS_KEY,
+      connections: {
+        s3: {
+          integrationId: 's3',
+          bucket: 'test-bucket-name',
+          region: 'ap-southeast-2',
+          credentials: {
+            aws_access_key_id: process.env.AWS_ACCESS_KEY_ID,
+            aws_secret_access_key: process.env.AWS_SECRET_ACCESS_KEY,
+          },
         },
       },
     });
@@ -31,21 +34,17 @@ describe('IntegrationManager', () => {
   });
 
   it('has the following methods', () => {
-    expect(typeof manager.addIntegration).toEqual('function');
+    expect(typeof manager.registerIntegration).toEqual('function');
     expect(typeof manager.removeIntegration).toEqual('function');
     expect(typeof manager.getIntegration).toEqual('function');
-    expect(typeof manager.getConfig).toEqual('function');
-    expect(typeof manager.list).toEqual('function');
-    expect(typeof manager.put).toEqual('function');
-    expect(typeof manager.get).toEqual('function');
-    expect(typeof manager.remove).toEqual('function');
+    expect(typeof manager.getIntegrationConfig).toEqual('function');
   });
 
   describe('addIntegration', () => {
     it('registers an integration successfully', () => {
-      const s3Integration = new S3Integration(manager.getConfig('s3') as IS3IntegrationParams);
+      const s3Integration = new S3Integration(manager.getIntegrationConfig('s3') as IS3IntegrationParams);
 
-      const result = manager.addIntegration('s3', (mgr) => {
+      const result = manager.registerIntegration('s3', (mgr) => {
         return s3Integration;
       });
 
@@ -56,9 +55,9 @@ describe('IntegrationManager', () => {
 
   describe('removeIntegration', () => {
     it('removes an integration successfully', () => {
-      const s3Integration = new S3Integration(manager.getConfig('s3') as IS3IntegrationParams);
+      const s3Integration = new S3Integration(manager.getIntegrationConfig('s3') as IS3IntegrationParams);
 
-      const done = manager.addIntegration('s3', (mgr) => {
+      const done = manager.registerIntegration('s3', (mgr) => {
         return s3Integration;
       });
 

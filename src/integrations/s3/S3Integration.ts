@@ -1,11 +1,11 @@
 import * as AWS from 'aws-sdk';
-import { IIntegration } from '../types';
-import { getDebug } from '../util/getDebug';
-import { Integration } from './Integration';
+import { IIntegration, IIntegrationConfig } from '../../types';
+import { getDebug } from '../../util/getDebug';
+import { Integration } from '../Integration';
 
 const debug = getDebug();
 
-export interface IS3IntegrationParams {
+export interface IS3IntegrationParams extends IIntegrationConfig {
   /** bucket name */
   bucket: string;
   /** aws region */

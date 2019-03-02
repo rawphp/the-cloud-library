@@ -1,15 +1,16 @@
-import { S3Integration } from '../../src/integrations/S3Integration';
-import { IIntegration } from '../../src/types';
-import * as listBucketResponseJson from '../fixtures/list-bucket-response.json';
-import * as listDevelopmentProjectsResponseJson from '../fixtures/list-development-projects-response.json';
-import * as packageLockJson from '../fixtures/package-lock.json';
-import * as putFileResponseJson from '../fixtures/put-file-response.json';
+import { S3Integration } from '../../../src/integrations/s3/S3Integration';
+import { IIntegration } from '../../../src/types';
+import * as listBucketResponseJson from '../../fixtures/list-bucket-response.json';
+import * as listDevelopmentProjectsResponseJson from '../../fixtures/list-development-projects-response.json';
+import * as packageLockJson from '../../fixtures/package-lock.json';
+import * as putFileResponseJson from '../../fixtures/put-file-response.json';
 
 describe('S3Integration', () => {
   let integration: IIntegration;
 
   beforeEach(() => {
     integration = new S3Integration({
+      integrationId: 's3',
       bucket: 'tdk-backup',
       region: 'ap-southeast-2',
       credentials: {

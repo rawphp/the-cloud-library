@@ -31,8 +31,12 @@
     "bluebird": "3.x.x",
     "circular-json": "0.5.x",
     "debug": "4.x.x",
+    "dropbox": "^4.0.16",
     "fs-extra": "6.x.x",
     "moment": ">=2.19.3",
+    "node-fetch": "2.x.x",
+    "promise-ftp": "1.x.x",
+    "stream-to-promise": "2.x.x",
     "uuid": "3.x.x"
   },
   "devDependencies": {
