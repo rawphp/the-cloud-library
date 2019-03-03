@@ -1,0 +1,23 @@
+language: node_js
+
+node_js:
+    - "6"
+    - "7"
+    - "8"
+    - "10"
+    - "11"
+
+sudo: false
+
+script:
+    - yarn lint
+    - yarn test
+    - yarn coverage
+
+after_success:
+    - yarn coveralls
+    - yarn codeclimate
+
+notifications:
+    email:
+        tom.kaczocha.code@gmail.com
