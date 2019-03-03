@@ -125,7 +125,7 @@ export class S3Integration extends Integration {
    *
    * @returns list of files and directories
    */
-  public async list(path: string, options: any = {}): Promise<string[]> {
+  public async list(path: string = '', options: any = {}): Promise<string[]> {
     debug('[S3 Integration] list', { path });
 
     try {
@@ -135,7 +135,7 @@ export class S3Integration extends Integration {
       do {
         const results = await this.s3Client.listObjects({
           Bucket: this.bucket,
-          Prefix: path,
+          Prefix: path !== '/' ? path : undefined,
           Delimiter: '/',
         }).promise();
 
@@ -170,7 +170,7 @@ export class S3Integration extends Integration {
       const result = await this.s3Client.upload({
         Bucket: this.bucket,
         Key: path,
-        Body: options.data,
+        Body: data,
       }).promise();
 
       if (!result.Location) {

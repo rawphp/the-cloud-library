@@ -1,5 +1,7 @@
 # The Cloud Library
 
+[![Build Status](https://travis-ci.org/rawphp/the-cloud-library.svg?branch=master)](https://travis-ci.org/rawphp/the-cloud-library)
+
 The goal of this project is to support all the major cloud storage providers in a common interface.
 
 [Read the Docs](https://rawphp.github.io/the-cloud-library)
