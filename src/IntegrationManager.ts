@@ -1,4 +1,5 @@
 import { EventEmitter } from 'events';
+import { DropboxIntegration } from './integrations';
 import { FTPIntegration } from './integrations/ftp/FTPIntegration';
 import { S3Integration } from './integrations/s3/S3Integration';
 import {
@@ -43,6 +44,9 @@ export class IntegrationManager extends EventEmitter implements IIntegrationMana
     });
     this.registerIntegration('ftp', (mgr: IIntegrationManager) => {
       return new FTPIntegration(mgr.getIntegrationConfig('ftp') as any);
+    });
+    this.registerIntegration('dropbox', (mgr: IIntegrationManager) => {
+      return new DropboxIntegration(mgr.getIntegrationConfig('dropbox') as any);
     });
   }
 
@@ -147,6 +151,8 @@ export class IntegrationManager extends EventEmitter implements IIntegrationMana
    * @returns integration config object
    */
   public getIntegrationConfig(integrationId: string): IIntegrationConfig {
-    return this.config.connections[integrationId];
+    const list = Object.keys(this.config.connections).map((key) => this.config.connections[key]);
+
+    return list.find((config: IIntegrationConfig) => config.integrationId === integrationId);
   }
 }

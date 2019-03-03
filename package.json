@@ -1,11 +1,12 @@
 {
   "name": "@tdk/the-cloud-library",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "private": false,
   "scripts": {
     "build": "tsc",
+    "build:watch": "tsc --watch",
     "watch": "npm-watch",
     "lint": "tslint --project tsconfig.json",
     "markdownlint:lint": "markdownlint -c .markdownlint.json '*.md'",
