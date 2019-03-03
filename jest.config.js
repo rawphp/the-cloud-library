@@ -11,9 +11,9 @@ module.exports = {
   coverageReporters: ['text', 'text-summary'],
   coverageThreshold: {
     global: {
-      statements: 76,
-      lines: 80,
-      functions: 72,
+      statements: 60,
+      lines: 60,
+      functions: 60,
     },
   },
   testPathIgnorePatterns: ['/dist/', '/.coverage/', '/node_modules/'],
